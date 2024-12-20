@@ -60,7 +60,7 @@ public class LoginPage extends BaseTest {
     }
     @Step("Hata mesajı alınır")
     public String getErrorPassword() {
-        String warningMessage = driver.findElement(By.xpath("//div[@id='auth-password-missing-alert']//div[@class='a-alert-content']")).getText();
+        String warningMessage = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(3) > div:nth-child(7) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2)")).getText();
         Allure.addAttachment(warningMessage + " hata mesajı ekrandan çekilir", "");
         screenshot();
         return warningMessage;

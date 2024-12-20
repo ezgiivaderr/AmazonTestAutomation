@@ -1,11 +1,15 @@
 package Pages;
 
 import Base.BaseTest;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class MainPage extends BaseTest {
+
+    public MainPage AcceptCookies() {
+        driver.findElement(By.id("a-autoid-0")).click();
+        return this;
+    }
 
     @Step("Anasayfa-Giriş butonu basılır")
     public MainPage SignButton() {

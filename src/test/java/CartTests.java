@@ -15,22 +15,20 @@ public class CartTests extends BaseTest {
     public void addtocart() throws InterruptedException {
         mainPage.BestSellers();
         sleep(3000);
-        productPage.headlampClick();
+        mainPage.AcceptCookies();
+        productPage.subcategoryClick();
+        sleep(3000);
+        productPage.productClick();
         sleep(3000);
         productPage.addcart();
+        sleep(3000);
         cartPage.carticonClick();
         assertEqualsText(cartPage.getcartinfo(), "Ara toplam (1 ürün):");
     }
 
     @Test (description = "Sepeti temizleme")
     public void deleteProductFromBasket() throws InterruptedException {
-        mainPage.BestSellers();
-        sleep(3000);
-        productPage.headlampClick();
-        sleep(3000);
-        productPage.addcart();
-        sleep(3000);
-        cartPage.carticonClick();
+        addtocart();
         sleep(3000);
         cartPage.emptycart();
         sleep(3000);

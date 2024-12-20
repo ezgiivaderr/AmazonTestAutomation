@@ -23,13 +23,13 @@ public class CartPage extends BaseTest {
     }
     @Step("Sepeti boşaltma")
     public CartPage emptycart() {
-        driver.findElement(By.xpath("//input[@value='Sil']"));
+        driver.findElement(By.cssSelector(".a-icon-small-remove")).click();
         screenshot();
         return this;
     }
     @Step("sepetiniz boştur")
     public String getdeleteinfo() {
-        String text = driver.findElement(By.cssSelector(".a-size-extra-large")).getText();
+        String text = driver.findElement(By.cssSelector(".a-size-extra-large.a-spacing-mini.a-spacing-top-base.a-text-normal")).getText();
         Allure.addAttachment(text + " metni ekanda görüntülenmiştir", "");
         screenshot();
         return text;
